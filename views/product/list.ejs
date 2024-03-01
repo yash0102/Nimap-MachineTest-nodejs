@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+<body>
+    <h1><%= title %></h1>
+    <a href="/product/create">Add new</a>
+    <table border="1" style="width:100%">
+      <tr>
+        <th>number</th>
+        <th>Name</th>
+        <th>category</th>
+        <th>Action</th>
+      </tr>
+      <% for(var i=0; i < products.length; i++) { %>
+        <tr>
+          <td><%= products[i].id %></td>
+          <td><%= products[i].name %></td>
+          <td><%= products[i].catagory %></td>
+          <td>
+            <a href="/product/view/<%= products[i].id %>">view</a>
+            <a href="/product/update/<%= products[i].id %>">edit</a>
+            <a href="/product/delete/<%= products[i].id %>">delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </table>
+    <div class="pagination">
+    <% for(var c=1; c <= total; c++){ %>
+        <a href="/product/page/<%=c %>" class="active"><%=c %></a>
+    <% } %> 
+    </div>
+</body>
+</html>

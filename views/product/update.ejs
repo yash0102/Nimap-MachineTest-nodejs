@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/product/edit/<%= product.id %>" method="post">
+        Product name: <input type="text" value="<%= product.name %>" name="name"><br><br>
+        Caragory :<%=product.catagoryID%>
+        <select name="category">
+            <% for(var i=0; i < category.length; i++) { %>
+                <% if (category[i].id == product.catagoryID) { %>
+                    <option selected value="<%= category[i].id %>"><%= category[i].catagory %></option>
+                <% } else { %>
+                    <option value="<%= category[i].id %>"><%= category[i].catagory %></option>
+                <% } %>
+            <% } %>
+        </select><br> <br>
+        Discription: <input type="textarea" name="Description" value="<%= product.description %>"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+</html>

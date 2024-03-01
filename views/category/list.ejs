@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <a href="/category/create">Add new</a>
+    <table border="1" style="width:100%">
+      <tr>
+        <th>number</th>
+        <th>category</th>
+        <th>Action</th>
+      </tr>
+      <% for(var i=0; i < category.length; i++) { %>
+        <tr>
+          <td><%= category[i].id %></td>
+          <td><%= category[i].catagory %></td>
+          <td>
+            <a href="/category/view/<%= category[i].id %>">view</a>
+            <a href="/category/update/<%= category[i].id %>">edit</a>
+            <a href="/category/delete/<%= category[i].id %>">delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </table> 
+  </body>
+</html>

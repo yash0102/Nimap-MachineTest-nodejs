@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/product/add" method="post">
+        Product name: <input type="text" name="name"><br><br>
+        Caragory :
+        <select name="category">
+            <% for(var i=0; i < category.length; i++) { %>
+                <option value="<%= category[i].id %>"><%= category[i].catagory %></option>
+            <% } %>
+        </select><br> <br>
+        Discription: <input type="textarea" name="Description"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/category/edit/<%= Category.id %>" method="post">
+        Category name: <input type="text" name="name" value="<%= Category.catagory %>"><br>
+        <input type="submit" value="Submit">
+      </form>  
+  </body>
+</html>
